@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#161618">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="AFM Chat">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="description" content="Chat with Apple's on-device Foundation Models.">
+  <title>AFM Chat</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/app.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5.5v13M5.5 12h13"/></symbol>
+      <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m21.4 11.1-9.2 9.2a6 6 0 0 1-8.5-8.5l8.6-8.6a4 4 0 0 1 5.7 5.7l-8.6 8.6a2 2 0 0 1-2.8-2.8l8.5-8.5"/></symbol>
+      <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2.5" width="6" height="12" rx="3"/><path d="M18.5 10.5v.5a6.5 6.5 0 0 1-13 0v-.5"/><path d="M12 17.5V21"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 18.5V6"/><path d="m6.5 11.2 5.5-5.5 5.5 5.5"/></symbol>
+      <symbol id="i-stop" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2.2" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-chevrons" viewBox="0 0 24 24"><path d="m7.5 14.5 4.5 4.5 4.5-4.5"/><path d="m7.5 9.5 4.5-4.5 4.5 4.5"/></symbol>
+      <symbol id="i-sidebar" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="3.5"/><path d="M9.5 4.5v15"/></symbol>
+      <symbol id="i-compose" viewBox="0 0 24 24"><path d="M11.5 4.5H7a3 3 0 0 0-3 3v9.5a3 3 0 0 0 3 3h9.5a3 3 0 0 0 3-3v-4.5"/><path d="M18.2 3.3a1.9 1.9 0 0 1 2.7 2.7L12.6 14.3 9 15l.7-3.6Z"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 6.5h16"/><path d="M18.5 6.5 17.7 19a2 2 0 0 1-2 1.9H8.3a2 2 0 0 1-2-1.9L5.5 6.5"/><path d="M9 6.5V4.8A1.8 1.8 0 0 1 10.8 3h2.4A1.8 1.8 0 0 1 15 4.8v1.7"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="12" height="12" rx="2.5"/><path d="M15.5 8.5V6a2.5 2.5 0 0 0-2.5-2.5H6A2.5 2.5 0 0 0 3.5 6v7A2.5 2.5 0 0 0 6 15.5h2.5"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4v5h-5"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M17 7 7 17"/><path d="m7 7 10 10"/></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 4.2 2.6 17.6A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-2.9L13.7 4.2a2 2 0 0 0-3.4 0Z"/><path d="M12 9.5v4"/><path d="M12 17h.01"/></symbol>
+      <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4.5" y="5" width="15" height="10.5" rx="2"/><path d="M2.5 19h19"/></symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H8.5a5.5 5.5 0 1 1 5.2-7.3 4 4 0 1 1 3.8 7.3Z"/></symbol>
+      <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9Z"/><path d="M4 7.5 12 12l8-4.5"/><path d="M12 12v9"/></symbol>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v13.5"/><path d="m5.5 12.5 6.5 6.5 6.5-6.5"/></symbol>
+      <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3.5"/><circle cx="9" cy="9.5" r="1.8"/><path d="m21 15.5-4-4-9 8.5"/></symbol>
+      <symbol id="i-gear" viewBox="0 0 24 24"><path d="M10.17 4.93L10.58 2.51A9.6 9.6 0 0 1 13.42 2.51L13.83 4.93A7.3 7.3 0 0 1 15.71 5.71L17.71 4.28A9.6 9.6 0 0 1 19.72 6.29L18.29 8.29A7.3 7.3 0 0 1 19.07 10.17L21.49 10.58A9.6 9.6 0 0 1 21.49 13.42L19.07 13.83A7.3 7.3 0 0 1 18.29 15.71L19.72 17.71A9.6 9.6 0 0 1 17.71 19.72L15.71 18.29A7.3 7.3 0 0 1 13.83 19.07L13.42 21.49A9.6 9.6 0 0 1 10.58 21.49L10.17 19.07A7.3 7.3 0 0 1 8.29 18.29L6.29 19.72A9.6 9.6 0 0 1 4.28 17.71L5.71 15.71A7.3 7.3 0 0 1 4.93 13.83L2.51 13.42A9.6 9.6 0 0 1 2.51 10.58L4.93 10.17A7.3 7.3 0 0 1 5.71 8.29L4.28 6.29A9.6 9.6 0 0 1 6.29 4.28L8.29 5.71A7.3 7.3 0 0 1 10.17 4.93Z"/><circle cx="12" cy="12" r="3.1"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/><path d="M10.5 18.5h3"/></symbol>
+      <symbol id="i-ghost" viewBox="0 0 24 24"><path d="M5 20.5V10a7 7 0 0 1 14 0v10.5l-2.33-2-2.34 2-2.33-2-2.33 2-2.34-2Z"/><path d="M9.5 10.5h.01"/><path d="M14.5 10.5h.01"/></symbol>
+      <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.9 3.6a2.1 2.1 0 0 1 3 3L8.2 18.3 4 19.5l1.2-4.2Z"/><path d="m14.8 5.7 3 3"/></symbol>
+      <symbol id="i-chev-left" viewBox="0 0 24 24"><path d="m14.5 6-6 6 6 6"/></symbol>
+      <symbol id="i-chev-right" viewBox="0 0 24 24"><path d="m9.5 6 6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="app" id="app">
+    <aside class="sidebar" id="sidebar" aria-label="Chats">
+      <div class="sidebar-head">
+        <button type="button" class="icon-btn" id="sidebarToggleInner" aria-label="Hide sidebar" data-tip="Hide sidebar" data-tip-pos="below-left">
+          <svg class="i"><use href="#i-sidebar"/></svg>
+        </button>
+        <button type="button" class="icon-btn" id="newChatSide" aria-label="New chat" data-tip="New chat" data-tip-pos="below-right">
+          <svg class="i"><use href="#i-compose"/></svg>
+        </button>
+      </div>
+      <nav class="chat-list" id="chatList"></nav>
+      <div class="sidebar-foot">
+        <button type="button" class="side-link" id="settingsBtn">
+          <svg class="i"><use href="#i-gear"/></svg>
+          <span>Settings</span>
+        </button>
+        <button type="button" class="side-link" id="devicesBtn">
+          <svg class="i"><use href="#i-phone"/></svg>
+          <span>Use on iPhone or iPad</span>
+        </button>
+        <div class="server-status" id="serverStatus" role="status">
+          <span class="dot"></span><span class="label">Connecting…</span>
+        </div>
+      </div>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+
+    <main class="main">
+      <header class="topbar">
+        <button type="button" class="icon-btn" id="sidebarToggle" aria-label="Show sidebar" aria-controls="sidebar" data-tip="Show sidebar" data-tip-pos="below-left">
+          <svg class="i"><use href="#i-sidebar"/></svg>
+        </button>
+        <h1 class="title" id="chatTitle">New chat</h1>
+        <button type="button" class="icon-btn ghost-btn" id="tempToggle" aria-label="Temporary chat" aria-pressed="false" data-tip="Temporary chat" data-tip-pos="below-right">
+          <svg class="i"><use href="#i-ghost"/></svg>
+        </button>
+      </header>
+
+      <div class="banner" id="banner" role="alert" hidden>
+        <svg class="i banner-icon"><use href="#i-alert"/></svg>
+        <div class="banner-text">
+          <strong id="bannerTitle"></strong>
+          <span id="bannerDetail"></span>
+        </div>
+        <button type="button" class="pill-btn" id="bannerRetry">Retry</button>
+      </div>
+
+      <section class="scroller" id="scroller">
+        <div class="empty" id="empty">
+          <h2 id="emptyTitle">How can I help?</h2>
+          <p class="empty-sub" id="emptySub" hidden>This conversation will not be saved.</p>
+        </div>
+        <div class="thread" id="thread" role="log" aria-live="polite" aria-label="Conversation"></div>
+      </section>
+
+      <button type="button" class="jump" id="jump" aria-label="Scroll to latest message" hidden>
+        <svg class="i"><use href="#i-arrow-down"/></svg>
+      </button>
+
+      <footer class="composer-wrap">
+        <div class="composer-bar">
+        <button type="button" class="c-btn plus-btn" id="attachBtn" aria-label="Attach images" data-tip="Attach images" data-tip-pos="above-left">
+          <svg class="i"><use href="#i-plus"/></svg>
+        </button>
+        <form class="composer" id="composer" autocomplete="off">
+          <div class="attachments" id="attachments" hidden></div>
+          <div class="composer-row">
+            <input type="file" id="fileInput" accept="image/*" multiple hidden>
+            <textarea id="input" rows="1" placeholder="Type a message" enterkeyhint="send" aria-label="Message" spellcheck="true"></textarea>
+            <div class="model-picker" id="modelPicker">
+              <button type="button" class="model-btn" id="modelBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="modelMenu">
+                <svg class="i model-icon" id="modelIcon"><use href="#i-laptop"/></svg>
+                <span class="model-label" id="modelLabel">On-device</span>
+                <svg class="i chev"><use href="#i-chevrons"/></svg>
+              </button>
+            </div>
+            <button type="button" class="c-btn mic" id="micBtn" aria-label="Dictate" data-tip="Dictate" data-tip-pos="above-right">
+              <svg class="i"><use href="#i-mic"/></svg>
+            </button>
+            <button type="submit" class="send" id="sendBtn" aria-label="Send" disabled hidden>
+              <svg class="i"><use href="#i-arrow-up"/></svg>
+            </button>
+          </div>
+        </form>
+        </div>
+        <div class="menu" id="modelMenu" role="listbox" aria-label="Model" hidden></div>
+        <p class="fineprint">Apple Foundation Models can make mistakes. Check important info.</p>
+      </footer>
+    </main>
+  </div>
+
+  <div class="drop-overlay" id="dropOverlay" hidden>
+    <div class="drop-card">
+      <svg class="i"><use href="#i-photo"/></svg>
+      <strong>Drop images to attach</strong>
+      <span>Up to 4 images</span>
+    </div>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <dialog class="sheet" id="devicesDialog" aria-labelledby="devicesTitle">
+    <div class="sheet-head">
+      <h2 id="devicesTitle">Use on iPhone or iPad</h2>
+      <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="sheet-body" id="devicesBody"></div>
+  </dialog>
+
+  <dialog class="sheet settings" id="settingsDialog" aria-labelledby="settingsTitle">
+    <div class="sheet-head">
+      <h2 id="settingsTitle">Settings</h2>
+      <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="sheet-body">
+      <h3 class="set-label" id="setInstructionsLabel">Instructions</h3>
+      <div class="set-group">
+        <textarea id="setInstructions" class="set-text" rows="4" maxlength="2000" aria-labelledby="setInstructionsLabel" placeholder="None"></textarea>
+      </div>
+      <p class="set-note">Tell the model how to answer, for example “Answer briefly” or “Reply in Turkish”. Sent at the start of every chat. Leave empty to use the model as it is.</p>
+
+      <h3 class="set-label">Responses</h3>
+      <div class="set-group">
+        <label class="set-row">
+          <span>Maximum length</span>
+          <select id="setLength">
+            <option value="0">No limit</option>
+            <option value="120">Short</option>
+            <option value="400">Medium</option>
+            <option value="1000">Long</option>
+          </select>
+        </label>
+        <label class="set-row">
+          <span>Reasoning effort</span>
+          <select id="setReasoning">
+            <option value="">Default</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </label>
+      </div>
+      <p class="set-note">Reasoning effort applies to Private Cloud Compute only. The on-device model does not support it.</p>
+
+      <h3 class="set-label">Web lookup</h3>
+      <div class="set-group">
+        <label class="set-row">
+          <span>Look up answers on Wikipedia</span>
+          <input type="checkbox" class="switch" id="setWeb" role="switch">
+        </label>
+      </div>
+      <p class="set-note">Off by default. When on, a short search for each question is sent from your Mac to Wikipedia, and the top results are handed to the model so it can answer about people, places and facts it does not know. Nothing else leaves your Mac.</p>
+
+      <button type="button" class="set-reset" id="setReset">Reset to Defaults</button>
+    </div>
+  </dialog>
+
+  <dialog class="alert" id="confirmDialog" aria-labelledby="confirmTitle" aria-describedby="confirmText">
+    <form method="dialog">
+      <h2 id="confirmTitle"></h2>
+      <p id="confirmText"></p>
+      <div class="alert-actions">
+        <button type="submit" class="alert-btn" value="cancel" id="confirmCancel">Cancel</button>
+        <button type="submit" class="alert-btn destructive" value="ok" id="confirmOk">Delete</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Image preview">
+    <img id="lightboxImg" alt="">
+    <button type="button" class="icon-btn lightbox-close" data-close aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button>
+  </dialog>
+</body>
+</html>

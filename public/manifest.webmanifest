@@ -1,0 +1,13 @@
+{
+  "name": "AFM Chat",
+  "short_name": "AFM Chat",
+  "description": "Chat with Apple's on-device Foundation Models.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

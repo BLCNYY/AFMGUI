@@ -1,0 +1,33 @@
+{
+  "name": "afmgui",
+  "version": "1.0.0",
+  "description": "A clean chat web app for Apple's on-device Foundation Models, powered by `fm serve`.",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "apple",
+    "foundation-models",
+    "apple-intelligence",
+    "on-device",
+    "llm",
+    "chat",
+    "macos",
+    "fm-serve"
+  ],
+  "author": "Ömer Balkan (https://github.com/BLCNYY)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BLCNYY/AFMGUI.git"
+  },
+  "homepage": "https://github.com/BLCNYY/AFMGUI#readme",
+  "bugs": {
+    "url": "https://github.com/BLCNYY/AFMGUI/issues"
+  }
+}
